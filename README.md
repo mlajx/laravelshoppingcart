@@ -1,4 +1,4 @@
-# Laravel 5 & 6 & 7 Shopping Cart
+# Laravel 5 & 6 & 7 & 8 Shopping Cart
 [![Build Status](https://travis-ci.org/darryldecode/laravelshoppingcart.svg?branch=master)](https://travis-ci.org/darryldecode/laravelshoppingcart)
 [![Total Downloads](https://poser.pugx.org/darryldecode/cart/d/total.svg)](https://packagist.org/packages/darryldecode/cart)
 [![License](https://poser.pugx.org/darryldecode/cart/license.svg)](https://packagist.org/packages/darryldecode/cart)
@@ -45,7 +45,7 @@ php artisan vendor:publish --provider="Darryldecode\Cart\CartServiceProvider" --
 
 ## HOW TO USE
 
--   [Quick Usage](#usage-usage-example)
+-   [Quick Usage](#quick-usage-example)
 -   [Usage](#usage)
 -   [Conditions](#conditions)
 -   [Items](#items)
@@ -53,7 +53,7 @@ php artisan vendor:publish --provider="Darryldecode\Cart\CartServiceProvider" --
 -   [Instances](#instances)
 -   [Exceptions](#exceptions)
 -   [Events](#events)
--   [Format Response](#format)
+-   [Format Response](#format-response)
 -   [Examples](#examples)
 -   [Using Different Storage](#storage)
 -   [License](#license)
@@ -92,7 +92,7 @@ foreach($items as $row) {
 
 	echo $row->id; // row ID
 	echo $row->name;
-	echo $row->qty;
+	echo $row->quantity;
 	echo $row->price;
 	
 	echo $item->associatedModel->id; // whatever properties your model have
@@ -800,7 +800,7 @@ Cart::add(array(
 
 // Now, when iterating over the content of the cart, you can access the model.
 foreach(Cart::getContent() as $row) {
-	echo 'You have ' . $row->qty . ' items of ' . $row->model->name . ' with description: "' . $row->model->description . '" in your cart.';
+	echo 'You have ' . $row->quantity . ' items of ' . $row->model->name . ' with description: "' . $row->model->description . '" in your cart.';
 }
 ```
 
